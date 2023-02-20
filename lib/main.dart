@@ -156,7 +156,7 @@ class _TodoListState extends State<TodoList> {
       DatabaseHelper.columnName: todoAdded,  
     };
     
-    final rowsAffected = await dbHelper.update(row,id);
+    await dbHelper.update(row,id);
     print(id);
     Navigator.of(context, rootNavigator: true).pop();
 
@@ -204,7 +204,7 @@ class _TodoListState extends State<TodoList> {
                     onPressed: (){
                       var id = task['id'];
                       showAlertDialog('edit task', 'edit',false,id);
-                      print(myTodos.length);
+                      print(id);
                       setState(() {
                       });
                     },
